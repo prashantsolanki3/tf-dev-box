@@ -31,3 +31,11 @@ jobs:
           tflint_version: latest
           # GitHub token - used when getting the latest version of tflint
           github_token: ${{ github.token }}
+      - name: Show version
+        run: tflint --version
+
+      - name: Init TFLint
+        run: tflint --init
+
+      - name: Run TFLint
+        run: tflint -f compact
