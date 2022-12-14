@@ -47,4 +47,4 @@ jobs:
         run: terraform init
 
       - name: terraform-apply
-        run: terraform apply -var-file=/github/workspace/terraform.tfvars
+        run: terraform apply -var-file=/github/terraform.tfvars
