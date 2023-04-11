@@ -39,3 +39,12 @@ jobs:
 
       - name: Run TFLint
         run: tflint -f compact
+        
+      - name: HashiCorp - Setup Terraform
+        uses: hashicorp/setup-terraform@v2.0.3
+      
+      - name: terraform init
+        run: terraform init
+
+      - name: terraform-apply
+        run: terraform apply -var-file=/github/terraform.tfvars --auto-approve

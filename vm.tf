@@ -47,7 +47,6 @@ resource "proxmox_vm_qemu" "dev" {
   connection {
     type        = "ssh"
     user        = var.user
-    password    = "P0r4ashant5"
     private_key = file(var.private_key_file)
     host        = var.ipv4
   }
