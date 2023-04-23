@@ -1,4 +1,7 @@
 <!--ts-->
+* [Dev box Terraform](#dev-box-terraform)
+   * [Preparation](#preparation)
+   * [Running the Module](#running-the-module)
 <!--te-->
 
 # Dev box Terraform
