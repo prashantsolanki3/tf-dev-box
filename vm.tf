@@ -55,7 +55,7 @@ resource "proxmox_vm_qemu" "dev" {
   provisioner "remote-exec" {
     inline = [
       "date",
-      "sleep 60"
+      "sleep 120"
     ]
   }
 
@@ -66,7 +66,7 @@ resource "proxmox_vm_qemu" "dev" {
 }
 
 resource "null_resource" "ansible" {
-  depends_on = [null_resource.git_clone, local_file.ansible_hosts, local_file.id_rsa, proxmox_vm_qemu.dev]
+  depends_on = [null_resource.git_clone, local_file.ansible_hosts, local_file.host_vars, proxmox_vm_qemu.dev]
   # Run Ansible Playbook
   provisioner "local-exec" {
     command = "cd ./.dots && ansible-playbook -i hosts ansible/dev.yml"

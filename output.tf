@@ -9,20 +9,25 @@ resource "local_file" "ansible_hosts" {
   filename = "./.dots/hosts"
 }
 
-resource "local_file" "id_rsa" {
-  content = templatefile("${path.module}/templates/id_rsa.tpl",
-    {
-      public_key  = file(var.public_key_file)
-    }
-  )
-  filename = "./.dots/id_rsa.pub"
-}
-
 resource "local_file" "ipv4" {
+# Required while destroying the VM
   content = templatefile("${path.module}/templates/ipv4.tpl",
     {
       ipv4  = var.ipv4
     }
   )
   filename = "./.dots/ipv4"
+}
+
+resource "local_file" "host_vars" {
+  # Ansible Variables
+  content = templatefile("${path.module}/templates/host_vars.tpl",
+    {
+      vars = {
+        "host_username" = var.user,
+        "authorized_keys" = file(var.public_key_file)
+      }
+    }
+  )
+  filename = "./.dots/host_vars.yaml"
 }

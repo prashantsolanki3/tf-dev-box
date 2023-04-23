@@ -7,6 +7,7 @@
 
 .dots/hosts
 .dots/id_rsa.pub
+.dots/host_vars.yaml
 .dots/ipv4
 .dots/ansible/*
 
