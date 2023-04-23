@@ -1,12 +1,12 @@
 <!--ts-->
-* [Dev box Terraform](#dev-box-terraform)
-   * [Preparation](#preparation)
-   * [Running the Module](#running-the-module)
+- [Bootstrap VM Terraform](#bootstrap-vm-terraform)
+  - [Preparation](#preparation)
+  - [Running the Module](#running-the-module)
 <!--te-->
 
-# Dev box Terraform
+# Bootstrap VM Terraform
 
-Deploy a development VM in Proxmox.
+Deploy a Bootstrap VM in Proxmox to run basic services like github runner for the Host infrastructure.
 
 ## Preparation
 
