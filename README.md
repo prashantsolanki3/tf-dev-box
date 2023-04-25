@@ -1,6 +1,8 @@
 ## [DEPRECATED]
 # Table of Content
 <!--ts-->
+   * [[DEPRECATED]](#deprecated)
+* [Table of Content](#table-of-content)
 * [Dev box Terraform](#dev-box-terraform)
    * [Preparation](#preparation)
    * [Running the Module](#running-the-module)
